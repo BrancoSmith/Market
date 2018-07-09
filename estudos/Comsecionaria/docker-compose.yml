@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: brancosmith/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    volumes:
+      - C:\Projetos\bases\mysql:/var/lib/mysql
+  web:
+    image: brancosmith/ubuntu2
+    ports:
+      - "80:80"
+    volumes:
+      - C:\Projetos:/var/www/html
+    links:
+     - db
+     

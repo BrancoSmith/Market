@@ -10,10 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'CatalogoController@index') ;
+Route::get('/', 'PrincipalController@index') ;
+Route::resource('principal','PrincipalController');
 Route::resource('catalogo','CatalogoController');
-
-Route::get('/', 'VendedorController@index') ;
 Route::resource('vendedor','VendedorController');
+
 

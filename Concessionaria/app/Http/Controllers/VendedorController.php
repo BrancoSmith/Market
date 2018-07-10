@@ -14,8 +14,8 @@ class VendedorController extends Controller
      */
     public function index()
     {
-        $catalogo = Catalogo::all();
-        return view('catalogo.index',['catalogo' => $catalogo]);
+        $vendedor = Vendedor::all();
+        return view('vendedor.index',['vendedor' => $vendedor]);
     }
 
     /**
@@ -25,7 +25,7 @@ class VendedorController extends Controller
      */
     public function create()
     {
-        //
+        return view('vendedor.create');
     }
 
     /**
@@ -36,7 +36,14 @@ class VendedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nome' =>'bail|required|unique:vendedors|max:60',
+            'cpf' =>'bail|required|max:11',
+            'telefone' =>'bail|required',
+        ]);
+
+        Vendedor::create($request->all());
+        return redirect('vendedor');
     }
 
     /**
@@ -47,7 +54,7 @@ class VendedorController extends Controller
      */
     public function show(vendedor $vendedor)
     {
-        //
+        return view('vendedor.show', ['vendedor' => $vendedor]);
     }
 
     /**

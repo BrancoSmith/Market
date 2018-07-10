@@ -2,15 +2,19 @@
 @section('main')
 
 <ul>
-@foreach($catalogo as @catalogo)
+@foreach($vendedor as $vendedor)
+
 <li>
-    <a href="{{ route('vendedor.show', $catalogo)}}">
-        {{ $catalogo->nome}}
+    <a href='{{ route('vendedor.show', $vendedor)}}'>
+        {{ $vendedor->nome}}
     </a>
 
 </li>
-@endsection
-<a href="{{ route('vendedor.create')}}">Cadastrar</a>
+@endforeach
+
+<a href='{{ route ('vendedor.create')}}'>Cadastrar</a><br>
+<a href='{{ route ('principal.index')}}'>Voltar</a>
 
 
 </ul>
+@endsection

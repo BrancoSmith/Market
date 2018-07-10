@@ -37,8 +37,8 @@ class MarketController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'bail|required|unique:markets|max:255',
-            'website' => 'bail|required',
+            'name' => 'bail|required|unique:markets|max:2',
+            'website' => 'bail|required|url',
             'city' => 'bail|required',
         ]);
         Market::create($request->all());

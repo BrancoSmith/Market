@@ -2,11 +2,13 @@
 @section('main')
 
 
-<form action="{{route('markets.store')}}" method="post">
-{{csrf_field()}}
-    <imput type="hidden" name="_token" value="DaBSErIR...WPPI">
+<form action='{{route('markets.store')}}' method="post">
 
-    <label for="name">Market Name</label>
+
+{{csrf_field()}}
+    
+
+    <label for="name">Market Nome</label>
     <input type="text" name="name">
 
     <label for="city">Location</label>
@@ -15,6 +17,7 @@
     <label for="website">Website</label>
     <input type="text" name="website">
 
-    <button type="submit">Create</button>
+    <button type="submit">Cadastrar</button>
     
     </form>
+    <a href='{{ route('markets.index')}}'>voltar</a>

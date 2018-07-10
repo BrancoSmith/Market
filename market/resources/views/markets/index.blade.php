@@ -14,7 +14,7 @@
         </li>
 
     @endforeach
-    <a href="{{ route('markets.create', $markets)}}">Cadastrar
+    <a href="{{ route('markets.create', $markets)}}">Cadastrar</a>
 </ul>
 
 </body>

@@ -36,6 +36,10 @@ class CatalogoController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nome' =>'bail|required|alpha',
+            'preco' =>'bail|required',
+        ]);
        catalogo::create($request->all());
        return redirect('catalogo'); 
     }
@@ -82,6 +86,10 @@ class CatalogoController extends Controller
      */
     public function destroy(catalogo $catalogo)
     {
-        //
+        $catalogo = Catalogo::destroy($catalogo);
+        
+
+        Session::flash('message', 'Successfully deleted!');
+        return Redirect('catalogo/index');
     }
 }

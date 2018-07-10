@@ -21,7 +21,7 @@
 
 </form>
     
-
+<a href='{{ route ('catalogo.index')}}'>Voltar</a>
 </li>
 @endsection
 

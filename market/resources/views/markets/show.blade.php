@@ -10,7 +10,7 @@
     <li>Website:{{$market->website}}</li>
 </ul>
 
-
+<a href='{{ route('markets.index')}}'>voltar</a>
 @endsection
 
 

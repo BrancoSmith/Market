@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html>
-<body>
 @extends('layouts.app')
 @section('main')
+	
 
-<ul>
-    @foreach($markets as $markets)
-        <li>
-            <a href="{{ route('markets.show', $markets)}}">
-             {{$markets->name}}
-             </a>
-        
-        </li>
+<table class="table table-striped">
 
-    @endforeach
-    <a href="{{ route('markets.create', $markets)}}">Cadastrar</a>
-</ul>
+			@foreach($markets as $market)
+				<div class="nav nav-pills nav-stacked">
+					<a href="{{ route('markets.show', $market) }}" class="list-group-item">
+					{{ $market->name }} 
+					</a>
+				</div>
+			@endforeach
+			
+</table>
+		
 
-</body>
-</html>
+<a class="btn btn-success btn-sm btn-block " href="{{ route('markets.create') }}">Cadastrar</a>
+<div  class="btn btn-default btn-xs btn-block">{{ $markets->links() }}</div>
+		@endsection	
+
+
+		

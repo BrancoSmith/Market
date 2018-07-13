@@ -13,9 +13,10 @@
 			@endforeach
 			
 </table>
-		
+
 
 <a class="btn btn-success btn-sm btn-block " href="{{ route('markets.create') }}">Cadastrar</a>
+<a href="{{ route('home.index') }}"  class="btn btn-danger  btn-sm btn-block">Voltar</a>
 <div  class="btn btn-default btn-xs btn-block">{{ $markets->links() }}</div>
 		@endsection	
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Market;
 use Illuminate\Http\Request;
-
+use App\Farm;
 class Marketcontroller extends Controller
 {
     /**
@@ -37,9 +37,9 @@ class Marketcontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         $this->validate($request,[
-            'name' => 'bail|required|unique:markets|max:2',
+            'name' => 'bail|required|unique:markets|max:255',
             'website' => 'bail|required|url',
             'city' => 'bail|required',           
         ]);
@@ -55,7 +55,7 @@ class Marketcontroller extends Controller
      */
     public function show(Market $market)
     {
-        return view('markets.show',['market' => $market]);
+        return view('markets.show', ['market' => $market]);
     }
 
     /**
@@ -66,7 +66,9 @@ class Marketcontroller extends Controller
      */
     public function edit(Market $market)
     {
-        //
+        $farms = Farm::get()->pluck('name', 'id')->sortBy('name');
+        return view('markets.edit', compact('market', 'farms'));
+    
     }
 
     /**
@@ -78,7 +80,9 @@ class Marketcontroller extends Controller
      */
     public function update(Request $request, Market $market)
     {
-        //
+        $market->update($request->all());
+        $market->farms()->sync($request->farms);
+        return redirect('markets');
     }
 
     /**

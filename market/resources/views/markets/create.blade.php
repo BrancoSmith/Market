@@ -17,6 +17,7 @@
 	<label for="website">Market WebSite</label>
 	<input type="text" class="form-control" id="website" name="website" placeholder="https://www.google.com/" >
 	</div>
+	
 
 	<button type="submit" class="btn  btn-success " >Cadastrar</button>
 	<a type="submit"  class="btn btn-danger " href='{{ route('markets.index')}}'>Cancelar</a>

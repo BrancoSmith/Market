@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main')
-    <ul>
+    <ol>
         @foreach($catalogo as $catalogo)
             <li>
                 <a href ="{{ route('catalogo.show', $catalogo)}}">
@@ -11,7 +11,7 @@
 
 
         @endforeach
-    </ul>
+    </ol>
                 <a href ="{{ route('catalogo.create')}}">
                     Cadastrar
                 </a><br>

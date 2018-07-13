@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main')
-    <ul>
+    <ol>
         @foreach($vendedor as $vendedor)
             <li>
                 <a href ="{{ route('vendedor.show', $vendedor)}}">
@@ -11,7 +11,7 @@
 
 
         @endforeach
-    </ul>
+    </ol>
                 <a href ="{{ route('vendedor.create')}}">
                     Cadastrar
                 </a><br>

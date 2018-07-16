@@ -81,7 +81,7 @@ class FarmController extends Controller
     {
         $farm->update($request->all());
         $farm->markets()->sync($request->markets);
-        return redirect('farms');
+        return view('farms.show', ['farm' => $farm]);
     }
 
     /**

@@ -82,7 +82,7 @@ class Marketcontroller extends Controller
     {
         $market->update($request->all());
         $market->farms()->sync($request->farms);
-        return redirect('markets');
+        return view('markets.show', ['market' => $market]);
     }
 
     /**

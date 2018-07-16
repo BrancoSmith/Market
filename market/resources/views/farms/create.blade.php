@@ -1,18 +1,8 @@
 
 @extends('layouts.app')
 @section('main')
-<form action='{{ route('farms.store', $farm)}}' method='post'>
-{{method_field('patch')}}
-    
-    @foreach($markets as $id =>$market)
-    <div>
-        <label for ='{{ $market }}'>
-            <input type='checkbox' name='markets[]' value='{{ $id }}' {{$farm->markets()->getRelatedIds()->contains($id) ? 'checked' : ''}}>
-            
-            {{$market}}
-        </label>
-    </div>
- @endforeach
+<form action='{{ route('farms.store')}}' method='post'>
+
 	{{ csrf_field() }}
 	<div class="form-group ">
 	<label for="name">Farm Name</label>
@@ -29,7 +19,9 @@
 	<input type="text" class="form-control" id="website" name="website" placeholder="https://www.google.com/" >
 	</div>
 
+	
 	<button type="submit" class="btn  btn-success " >Cadastrar</button>
 	<a type="submit"  class="btn btn-danger " href='{{ route('farms.index')}}'>Cancelar</a>
+	
 </form>	
-@endsection	
+@endsection()	

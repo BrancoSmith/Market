@@ -5,29 +5,34 @@
     {{ csrf_field() }}
 
 
-    <div class="form-group">
-        <lable for='nome'>Nome do Carro</label>
-        <input type='text' name='nome'>
-   
-
-  
-        <lable for='ano' >Ano do Carro</label>
-        <input type='text' class="form-control" id="ano" name='ano'>
-
-
-    <lable for='preco' class="sr-only" >Preço do Carro</label>
-    <input type='text' name='preco' class="form-control" id="preco" >
+    <div class="panel panel-success btn-block">
+    <div class="panel-heading"><h1>Cadastro de Veiculo</h1></div> 
+    </div>
     
-
-    <lable for='kmrodado'>Kilometragem</label>
-    <input type='text' name='kmrodado'></input>
+    <div class="form-group ">
+    <lable for='nome'><strong>Nome do Carro</strong> </label>
+    <input type='text'  class="form-control" id="nome" name='nome'>
+    </div>
+    
+    <div class="form-group ">
+    <lable for='nome'><strong>Ano do Carro</strong> </label>
+    <input type='text'  class="form-control" id="cpf" name='cpf'>
     </div>
 
-    <button type='submit'>Cadastrar</button>
+    <div class="form-group ">
+    <lable for='nome'><strong>Preço do Veiculo</strong> </label>
+    <input type='text'  class="form-control" id="preco" name='preco'>
+    </div>
 
-</form><br>
-<a href ="{{ route('catalogo.index')}}">
-    Voltar
-</a>
+    <div class="form-group ">
+    <lable for='nome'><strong>Kilometragem</strong> </label>
+    <input type='text'  class="form-control" id="km rodado" name='kmrodado'><br>
+    </div>
+
+   <button type="submit" class="btn  btn-success btn-block ">Cadastrar</button>
+   
+</form>
+    <button type="submit" class="btn btn-primary btn-block" href ="{{ route('catalogo.index')}}">Voltar</button>
+
 
 @endsection

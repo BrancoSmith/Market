@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class VendedorController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
@@ -37,12 +38,12 @@ class VendedorController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nome' => 'required|unique:vendedors|max:100',
-            'cpf' => 'required|unique:vendedors|max:11|min:11',
-            'telefone' =>'required',
+        'nome' => 'required|unique:vendedors|max:100',
+        'cpf' => 'required|max:11|min:11',
+        'telefone' =>'required',
 
 
-        ]);
+    ]);
 
         Vendedor::create($request->all());
         return redirect('vendedor');
@@ -67,7 +68,7 @@ class VendedorController extends Controller
      */
     public function edit(vendedor $vendedor)
     {
-        //
+        return view('vendedor.edit', ['vendedor' => $vendedor]);
     }
 
     /**
@@ -79,7 +80,15 @@ class VendedorController extends Controller
      */
     public function update(Request $request, vendedor $vendedor)
     {
-        //
+        $this->validate($request,  [
+            'nome' => 'required|max:100',
+            'cpf' => 'required|max:11|min:11',
+            'telefone' =>'required',
+    
+        ]);
+
+        $vendedor->update($request->all());
+        return view('vendedor.show', ['vendedor' => $vendedor]);
     }
 
     /**
@@ -90,6 +99,12 @@ class VendedorController extends Controller
      */
     public function destroy(vendedor $vendedor)
     {
-        //
+      
+        Vendedor::Remove($vendedor);
+        
+
+
+        Session::flash('message', 'Excluido com Sucesso!!!');
+        return Redirect('vendedor.index');
     }
 }

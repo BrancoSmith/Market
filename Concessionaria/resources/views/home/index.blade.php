@@ -1,14 +1,24 @@
 @extends('layouts.app')
 @section('main')
-    <ul>
-    <h1>Nenens</h1>
-     
-        <a href ="{{ route('vendedor.index')}}" class='fa fa-user'>
-                   Vendedores
-        </a><br>
-        <a href ="{{ route('catalogo.index')}}" class='fa fa-car'>
-                   Catalogo de Carros
-        </a>
-    </ul>
-@endsection
 
+
+    <div class="panel panel-success">
+<div class='panel-heading'><h1>Nenens</h1>	</div>
+    </div>
+<table class="table table-striped">
+
+			
+				<div class="nav nav-pills nav-stacked">
+					<a href ="{{ route('vendedor.index')}}"  class="list-group-item fa fa-user">
+                       <strong> Vendedores</strong>
+					</a>
+                    <a <a href ="{{ route('catalogo.index')}}"  class="list-group-item fa fa-car">
+						<strong> Catalogo de Carros</strong>
+					</a>
+				</div>
+                <div></div>
+
+		 
+			
+</table>
+@endsection

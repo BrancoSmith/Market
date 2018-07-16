@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Optional theme -->
@@ -18,14 +20,13 @@
     <script src="main.js"></script>
 </head>
 <body>
-    @if(count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
-
+<div class="container">
+     
     @yield('main')
+    @if(count($errors) > 0) 
+			@foreach ($errors->all() as $error)
+			<div class="alert alert-danger" role="alert">{{ $error }}</div>
+			@endforeach
+	@endif	
 </body>
 </html>

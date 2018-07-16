@@ -66,7 +66,8 @@ class CatalogoController extends Controller
      */
     public function edit(catalogo $catalogo)
     {
-        //
+        
+        return view('catalogo.edit', ['catalogo' => $catalogo]);
     }
 
     /**
@@ -78,7 +79,8 @@ class CatalogoController extends Controller
      */
     public function update(Request $request, catalogo $catalogo)
     {
-        //
+        $catalogo->update($request->all());
+        return view('catalogo.show', ['catalogo' => $catalogo]);
     }
 
     /**

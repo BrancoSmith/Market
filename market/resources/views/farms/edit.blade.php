@@ -2,17 +2,7 @@
 @section('main')
 
 <form action='{{ route('farms.update', $farm)}}' method='post'>
-{{method_field('patch')}}
-    
-    @foreach($markets as $id =>$market)
-    <div>
-        <label for ='{{ $market }}'>
-            <input type='checkbox' name='markets[]' value='{{ $id }}' {{$farm->markets()->getRelatedIds()->contains($id) ? 'checked' : ''}}>
-            
-            {{$market}}
-        </label>
-    </div>
- @endforeach
+
 
     {{ csrf_field() }}
 	<div class="form-group ">
@@ -30,7 +20,17 @@
 	<input type="text" class="form-control" id="website" name="website" placeholder="https://www.google.com/" value="{{$farm->website}}" >
 	</div>
 
-	
+	{{method_field('patch')}}
+    
+    @foreach($markets as $id =>$market)
+    <div>
+        <label for ='{{ $market }}'>
+            <input type='checkbox' name='markets[]' value='{{ $id }}' {{$farm->markets()->getRelatedIds()->contains($id) ? 'checked' : ''}}>
+            
+            {{$market}}
+        </label>
+    </div>
+ @endforeach
  
 
  <button type="submit" class="btn  btn-success " >Edit</button>

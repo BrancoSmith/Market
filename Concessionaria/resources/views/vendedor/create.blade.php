@@ -4,21 +4,29 @@
 <form action='{{ route('vendedor.store')}}' method='post'>
     {{ csrf_field() }}
 
-    <lable for='nome'>Nome </label>
-    <input type='text' name='nome'>
+    <div class="panel panel-success btn-block">
+    <div class="panel-heading"><h1>Cadastro de Funcionario</h1></div> 
+    </div>
 
-    <lable for='cpf'>Cpf</label>
-    <input type='text' name='cpf'>
+    <div class="form-group ">
+    <lable for='nome'><strong>Nome</strong> </label>
+    <input type='text'  class="form-control" id="nome" name='nome'>
+    </div>
 
-    <lable for='telefone'>Telefone</label>
-    <input type='text' name='telefone'>
+     <div class="form-group ">
+    <lable for='cpf'><strong>Cpf</strong></label>
+    <input type='text' name='cpf'  class="form-control" id="cpf">
+    </div>
 
+     <div class="form-group ">
+    <lable for='telefone'><strong>Telefone</strong></label>
+    <input type='text' name='telefone' class="form-control" id="telefone" >
+    </div>
 
-    <button type='submit'>Cadastrar</button>
-
+    <button type="submit" class="btn  btn-success btn-block ">Cadastrar</button>
+    <a type="submit" class="btn btn-primary btn-block" href ="{{ route('vendedor.index')}}">Voltar</a>
 </form><br>
-<a href ="{{ route('vendedor.index')}}">
-    Voltar
-</a>
+
+    
 
 @endsection

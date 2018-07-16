@@ -1,23 +1,40 @@
 @extends('layouts.app')
 @section('main')
-    <ol>
-        @foreach($vendedor as $vendedor)
-            <li>
-                <a href ="{{ route('vendedor.show', $vendedor)}}">
-                    {{ $vendedor->nome }}
-                </a><br>
-                
-            </li>
 
 
-        @endforeach
-    </ol>
-                <a href ="{{ route('vendedor.create')}}">
+<div class="panel panel-success">
+<div class='panel-heading '><h1>Vendedores</h1></div>
+    </div>
+    
+    
+    <div class="w3-container">
+        <div class="w3-card-4" style="width:100%">
+                <div class="w3-container w3-center">
+                <table class="table table-striped"> <br>
+
+                    @foreach($vendedor as $vendedor)
+                        <div class="nav nav-pills nav-stacked">
+                            <a href ="{{ route('vendedor.show', $vendedor)}}" class="list-group-item"><strong>{{ $vendedor->nome}}</strong></a>
+                        </div>
+                    @endforeach
+           
+                   
+                </div>
+            </div>
+        </div><br>
+
+                <a href ="{{ route('vendedor.create')}}"  class="btn btn-success  btn-sm btn-block">
                     Cadastrar
-                </a><br>
-                <a href ="{{ route('home.index')}}">
+                </a>
+                <a href ="{{ route('home.index')}}"  class="btn btn-primary  btn-sm btn-block">
                     Voltar ao inicio
                 </a>
+         
+            </table>
 
 @endsection
 
+
+
+
+		 

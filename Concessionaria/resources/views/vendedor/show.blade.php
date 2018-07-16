@@ -1,18 +1,16 @@
 @extends('layouts.app')
 @section('main')
 
+<div class="panel panel-success">
+	
+    <div class="panel-heading"><h1>{{ $vendedor->nome }}</h1></div>
 
-<h1>{{ $vendedor->nome }}</h1>
-
-<ul>
-    <li>Nome:{{ $vendedor->nome}}</li>
-    <li>Cpf :{{ $vendedor->cpf}}</li>
-    <li>Telefone :{{ $vendedor->telefone}}</li>
-</ul>
-
-<a href ="{{ route('vendedor.index')}}">
-    Voltar
-</a>
+   <div class="panel-body"><strong>Nome:  {{ $vendedor->nome}}</strong></div>
+   <div class="panel-body"><strong>Cpf:  {{ $vendedor->cpf}}</strong></div>
+   <div class="panel-body"><strong>Telefone:  {{ $vendedor->telefone}}</strong></div>
+</div>
+<a class="btn btn-warning btn-sm btn-block " href="{{ route('vendedor.edit', $vendedor)}}">Editar</a>
+<a class="btn btn-primary  btn-sm btn-block"href ="{{ route('vendedor.index')}}">Voltar</a>
 
 
 @endsection

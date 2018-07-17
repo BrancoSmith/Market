@@ -12,5 +12,7 @@
 */
 Route::get('/', 'HomeController@index');
 Route::resource('home', 'HomeController');
-Route::resource('catalogo', 'CatalogoController');
 Route::resource('vendedor', 'vendedorController');
+Route::resource('carro', 'CarroController');
+Route::resource('cliente', 'ClienteController');
+Route::resource('ano', 'AnoController');

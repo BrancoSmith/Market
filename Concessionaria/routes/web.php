@@ -16,3 +16,4 @@ Route::resource('vendedor', 'vendedorController');
 Route::resource('carro', 'CarroController');
 Route::resource('cliente', 'ClienteController');
 Route::resource('ano', 'AnoController');
+Route::resource('venda', 'VendaController');

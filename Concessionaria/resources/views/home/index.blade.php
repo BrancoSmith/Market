@@ -9,8 +9,8 @@
     </div>
 <table class="table table-striped">
 
-			
-				<div class="nav nav-pills nav-stacked">
+			<ul>
+				<la><div class="nav nav-pills nav-stacked">
 					<a href ="{{ route('vendedor.index')}}"  class="list-group-item fa fa-user">
                        <strong> Vendedores</strong>
 					</a>
@@ -26,8 +26,11 @@
 				<a <a href ="{{ route('ano.index')}}"  class="list-group-item fa fa-car">
 						<strong>Catalogo</strong>
 					</a>
+					<a <a href ="{{ route('venda.index')}}"  class="list-group-item fa fa-car">
+						<strong>Vendas</strong>
+					</a>
 				</div>
-
+			</ul>
 		 
 			
 </table>

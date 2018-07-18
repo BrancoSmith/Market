@@ -4,10 +4,8 @@
 
 
    <form action='{{ route('carro.update', $carro)}}' method='post' class="form-group">
-    {{method_field('patch')}}
     {{ csrf_field() }}
- 
-
+    
     <div class="panel panel-success btn-block">
     <div class="panel-heading"><h1>Editar Dados do Carro</h1></div> 
     </div>
@@ -32,9 +30,21 @@
     <lable for='kmrodado'>Kilometragem</label>
     <input type='text' class="form-control" id="kmrodado" name='kmrodado' value="{{$carro->kmrodado}}">
     </div>
+  
+  <h2>Catalogos</h2>
+    {{method_field('patch')}}
+    @foreach($anos as $id => $ano)
+        <div>
+            <label for='{{ $ano }}'>
+                <input type='checkbox' name='anos[]' value='{{ $id }}' {{$carro->anos()->allRelatedIds()->contains($id) ? 'checked' : ''}}>
+                {{ $ano }}
+            </label>
+        </div>
+    @endforeach
 
-   <button type="submit" class="btn  btn-warning btn-block ">Editar</button>
-   
+
+
+  <button type="submit" class="btn  btn-warning btn-block ">Editar</button>
 
 </form>
 <a type="submit" class="btn btn-primary btn-block" href ="{{ route('carro.index')}}">Voltar</a>

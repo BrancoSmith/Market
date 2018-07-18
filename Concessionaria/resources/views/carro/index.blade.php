@@ -27,6 +27,7 @@
                 <a href ="{{ route('home.index')}}"  class="btn btn-primary  btn-sm btn-block">
                     Voltar ao inicio
                 </a>
+                
          
             </table>
                 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Carro;
 use Illuminate\Http\Request;
+use App\Ano;
 
 class CarroController extends Controller
 {
@@ -68,8 +69,10 @@ class CarroController extends Controller
      */
     public function edit(carro $carro)
     {
+       
+        $anos = Ano::get()->pluck('ano', 'id')->sortBy('ano');
+        return view('carro.edit', compact('carro', 'anos'));
         
-        return view('carro.edit', ['carro' => $carro]);
     }
 
     /**
@@ -82,6 +85,7 @@ class CarroController extends Controller
     public function update(Request $request, carro $carro)
     {
         $carro->update($request->all());
+        $carro->anos()->sync($request->anos);
         return view('carro.show', ['carro' => $carro]);
     }
 

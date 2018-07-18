@@ -34,14 +34,9 @@
  
 
  <button type="submit" class="btn  btn-success " >Edit</button>
-	<a type="submit"  class="btn btn-danger " href='{{ route('farms.index')}}'>Cancelar</a>
+ <a type="submit"  class="btn btn-danger " href='{{ route('farms.index')}}'>Cancelar</a>
 
 
 </form>
-
-
-
-
-
 
 @endsection()

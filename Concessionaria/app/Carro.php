@@ -8,7 +8,9 @@ class Carro extends Model
 {
     protected $fillable = ['nome', 'ano', 'preco', 'kmrodado'];
 
-    public function ano(){
+    public function anos(){
         return $this->belongsToMany('App\Ano')->withTimestamps();
+        
     }
+    
 }

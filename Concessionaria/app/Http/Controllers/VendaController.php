@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Venda;
 use Illuminate\Http\Request;
-
+use App\Carro;
+use App\Cliente;
+use App\Vendedor;
 class VendaController extends Controller
 {
     /**
@@ -13,9 +15,9 @@ class VendaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
-       
-        
+    {
+        $venda = Venda::all();
+        return view('venda.index', ['vendas' => $venda] );
     }
 
     /**
@@ -25,7 +27,10 @@ class VendaController extends Controller
      */
     public function create()
     {
-        //
+        $carros = Carro::get();
+        $clientes = Cliente::get();
+        $vendedors = Vendedor::get();
+        return view('venda.create', compact('carros', 'clientes', 'vendedors'));
     }
 
     /**
@@ -36,7 +41,15 @@ class VendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'cliente_id' => 'required',
+            'carro_id' => 'required',
+            'vendedor_id' => 'required',
+        ]);
+       
+        Venda::create($request->all());
+        return redirect('venda');
     }
 
     /**
@@ -47,7 +60,7 @@ class VendaController extends Controller
      */
     public function show(Venda $venda)
     {
-        //
+         return view('venda.show', ['clientes' => $venda]);
     }
 
     /**

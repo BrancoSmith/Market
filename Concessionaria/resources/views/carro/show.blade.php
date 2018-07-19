@@ -20,7 +20,7 @@
     @endforeach
 
 </div>
-<a class="btn btn-success btn-sm btn-block " href="#">Vender</a>
+
 <a class="btn btn-warning btn-sm btn-block " href="{{ route('carro.edit', $carro)}}">Editar</a>
 <a class="btn btn-primary  btn-sm btn-block"href ="{{ route('carro.index')}}">Voltar</a>
 <a class="btn btn-primary  btn-sm btn-block"href ="{{ route('ano.show', $ano)}}">Voltar ao Catalogo</a>

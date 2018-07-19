@@ -14,7 +14,7 @@ class Vendedor extends Model
     }
 
     public function clientes(){
-        return $this->belongsToMany('App\Cliente', 'cliente_id');
+        return $this->belongsToMany('App\Cliente')->withTimestamps();
         }
 
     public function vendedors(){

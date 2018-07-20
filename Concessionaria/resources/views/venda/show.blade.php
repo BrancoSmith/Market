@@ -3,7 +3,7 @@
 
 
 <div class="panel panel-success">
-     <div class='panel-heading '><h1>Vendas Nº</h1></div>
+     <div class='panel-heading '><h1>Vendas Nº{{$venda->id}}</h1></div>
 </div>
     
     
@@ -12,16 +12,31 @@
             <div class="w3-container w3-center">
                 <table class="table table-striped"> <br>
 
-                    {{method_field('patch')}}
-                     @foreach($clientes->clientes()->get() as $cliente)
-                            <div class="nav nav-pills nav-stacked">
-                                 <a href ="{{ route('cliente.show', $cliente)}}" class="list-group-item">
-                                     {{ $cliente->nome }}
-                                 </a>
+
+                            <div class="panel panel-success btn-block">
+                            <div class="panel-heading">
+                            <h4>Carro</h4>
+                            </div> 
+                            <a href ="{{ route('carro.show', $venda->carro->id)}}" class="list-group-item">{{$venda->carro->nome}}</a>
+                            </div> 
                             </div>
-                     @endforeach
 
 
+                            <div class="panel panel-success btn-block">
+                            <div class="panel-heading">
+                            <h4>Cliente</h4>
+                            </div> 
+                            <a  href ="{{ route('cliente.show', $venda->cliente->id)}}"class="list-group-item">{{$venda->cliente->nome}}</a>
+                            </div>
+                            </div>
+
+                            <div class="panel panel-success btn-block">
+                            <div class="panel-heading">
+                            <h4>Vendedor</h4>
+                            </div> 
+                            <a  href ="{{ route('vendedor.show', $venda->vendedor->id)}}"class="list-group-item">{{$venda->vendedor->nome}}</a>
+                            </div>
+                            </div>
                  </div>
              </div>
          </div><br>
@@ -30,6 +45,7 @@
                     Voltar ao inicio
                 </a>
          
+                
             </table>
 
 @endsection

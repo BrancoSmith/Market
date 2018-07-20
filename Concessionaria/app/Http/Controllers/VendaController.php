@@ -60,7 +60,8 @@ class VendaController extends Controller
      */
     public function show(Venda $venda)
     {
-         return view('venda.show', ['clientes' => $venda]);
+       // dd($venda->carro->nome);
+      return view('venda.show', compact('venda'));
     }
 
     /**

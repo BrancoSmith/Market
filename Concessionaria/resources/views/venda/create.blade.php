@@ -20,7 +20,7 @@
                                  <h4>Cliente</h4>
                              </div> 
                                 @foreach($clientes as $cliente)
-                                    <input type='radio'  name='cliente_id' value='{{ $cliente->id }}'>{{$cliente->nome}}<br>
+                                    <input type='checkbox'  name='cliente_id' value='{{ $cliente->id }}'>{{$cliente->nome}}<br>
                                 @endforeach      
                         </div>
     
@@ -44,6 +44,8 @@
             </div>            </div> 
          </div> 
      </div> 
+      
+    
     
 
 

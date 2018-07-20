@@ -16,10 +16,10 @@ class Carro extends Model
     }
 
     public function clientes(){
-        return $this->belongsToMany('App\Cliente')->withTimestamps();
+        return $this->hasOne('App\Cliente')->withTimestamps();
     }
 
     public function vendedors(){
-        return $this->belongsToMany('App\Vendedor', 'vendedor_id');
+        return $this->hasOne('App\Vendedor', 'vendedor_id');
     }
 }

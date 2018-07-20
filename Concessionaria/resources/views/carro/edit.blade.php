@@ -10,6 +10,10 @@
     <div class="panel-heading"><h1>Editar Dados do Carro</h1></div> 
     </div>
 
+    <div class="w3-container">
+     <div class="w3-card-4" style="width:100%">
+    <div class="w3-container w3-center">
+    <table class="table table-striped"> <br>
 
     <div class="form-group ">
     <lable for='nome'>Nome do Carro</label>
@@ -45,6 +49,9 @@
 
 
   <button type="submit" class="btn  btn-warning btn-block ">Editar</button>
+  </div>
+  </div>
+  </div>
 
 </form>
 <a type="submit" class="btn btn-primary btn-block" href ="{{ route('carro.index')}}">Voltar</a>

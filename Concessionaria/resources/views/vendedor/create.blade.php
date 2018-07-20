@@ -8,6 +8,11 @@
     <div class="panel-heading"><h1>Cadastro de Funcionario</h1></div> 
     </div>
 
+     <div class="w3-container">
+        <div class="w3-card-4" style="width:100%">
+            <div class="w3-container w3-center">
+                <table class="table table-striped"> <br>
+
     <div class="form-group ">
     <lable for='nome'><strong>Nome</strong> </label>
     <input type='text'  class="form-control" id="nome" name='nome'>
@@ -27,6 +32,8 @@
     <a type="submit" class="btn btn-primary btn-block" href ="{{ route('vendedor.index')}}">Voltar</a>
 </form><br>
 
-    
+    </div>
+    </div>
+    </div>
 
 @endsection

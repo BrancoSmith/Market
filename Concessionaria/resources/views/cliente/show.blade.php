@@ -11,6 +11,7 @@
 </div>
 <a class="btn btn-warning btn-sm btn-block " href="{{ route('cliente.edit', $cliente)}}">Editar</a>
 <a class="btn btn-primary  btn-sm btn-block"href ="{{ route('cliente.index')}}">Voltar</a>
+<a href ="{{ route('venda.index')}}"  class="btn btn-primary  btn-sm btn-block">Venda</a>
 
 
 @endsection

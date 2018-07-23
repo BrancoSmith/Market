@@ -2,7 +2,9 @@
 @section('main')
     
     <div class="panel panel-success">
-        <div class='panel-heading '><h1>Catalogos</h1></div>
+        <div class='panel-heading '><h1>Catalogos</h1> <a href ="{{ route('ano.create')}}"  class="btn btn-success  btn-sm ">
+                    Novo Catalogo
+                </a></div>
     </div>
 
     <div class="w3-container">
@@ -21,9 +23,7 @@
              </div>
          </div><br>
 
-                <a href ="{{ route('ano.create')}}"  class="btn btn-success  btn-sm btn-block">
-                    Novo Catalogo
-                </a>
+               
                 <a href ="{{ route('home.index')}}"  class="btn btn-primary  btn-sm btn-block">
                     Voltar ao inicio
                 </a>

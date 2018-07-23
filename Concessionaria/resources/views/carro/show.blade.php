@@ -11,11 +11,17 @@
     <div class="panel-body"><strong>Preço do Carro:  {{ $carro->preco}}</strong></div>
     <div class="panel-body"><strong>Kilometragem:  {{ $carro->kmrodado}}</strong></div>
 
- <h4>Catalgos relacionados</h4>
-     @foreach($carro->anos()->get() as $ano)
+     <h4>Catalgos relacionados</h4>
+      @foreach($carro->anos()->get() as $ano)
         <label for ='{{ $ano }}'>
-                <div class="panel-body">{{$ano->ano}}</div>
-             
+        <a href={{ route('ano.show', $ano->id)}}"> <div class="panel-body">{{$ano->ano}}</div></a>     
+        </label>
+     @endforeach
+
+    <h4>Vendas Relacionadas</h4>
+     @foreach($carro->vendas()->get() as $venda)
+        <label for ='{{ $venda }}'>
+                <a href={{ route('venda.show', $venda->id)}}"><div class="panel-body">Nº{{$venda->id}}</div></a>
         </label>
     @endforeach
 
@@ -23,8 +29,6 @@
 
 <a class="btn btn-warning btn-sm btn-block " href="{{ route('carro.edit', $carro)}}">Editar</a>
 <a class="btn btn-primary  btn-sm btn-block"href ="{{ route('carro.index')}}">Voltar</a>
-<a class="btn btn-primary  btn-sm btn-block"href ="{{ route('ano.show', $ano)}}">Voltar ao Catalogo</a>
-<a href ="{{ route('venda.index')}}"  class="btn btn-primary  btn-sm btn-block">Venda</a>
          
 
 

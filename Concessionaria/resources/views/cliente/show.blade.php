@@ -8,10 +8,20 @@
    <div class="panel-body"><strong>Nome:  {{ $cliente->nome}}</strong></div>
    <div class="panel-body"><strong>Cpf:  {{ $cliente->cpf}}</strong></div>
    <div class="panel-body"><strong>Telefone:  {{ $cliente->telefone}}</strong></div>
+
+   <h4>Compras Realizadas</h4>
+     @foreach($cliente->vendas()->get() as $venda)
+        <label for ='{{ $venda }}'>
+                <a href={{ route('venda.show', $venda->id)}}"><div class="panel-body">Nº{{$venda->id}}</div></a>
+                
+        </label>
+           
+    @endforeach
+
+
 </div>
 <a class="btn btn-warning btn-sm btn-block " href="{{ route('cliente.edit', $cliente)}}">Editar</a>
 <a class="btn btn-primary  btn-sm btn-block"href ="{{ route('cliente.index')}}">Voltar</a>
-<a href ="{{ route('venda.index')}}"  class="btn btn-primary  btn-sm btn-block">Venda</a>
 
 
 @endsection

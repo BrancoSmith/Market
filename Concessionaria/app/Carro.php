@@ -22,4 +22,8 @@ class Carro extends Model
     public function vendedors(){
         return $this->hasOne('App\Vendedor', 'vendedor_id');
     }
+
+    public function vendas(){
+        return $this->hasOne('App\Venda', 'carro_id', 'id');
+    }
 }

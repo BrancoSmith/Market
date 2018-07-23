@@ -57,6 +57,7 @@ class VendedorController extends Controller
      */
     public function show(vendedor $vendedor)
     {
+        
         return view('vendedor.show', ['vendedor' => $vendedor]);
     }
 

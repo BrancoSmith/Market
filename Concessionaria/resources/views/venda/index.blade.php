@@ -2,7 +2,9 @@
 @section('main')
     
 <div class="panel panel-success">
-        <div class='panel-heading '><h1>Vendas</h1></div>
+        <div class='panel-heading '><h1>Vendas</h1> <a class="btn btn-success btn-sm  " href="{{ route('venda.create')}}">
+                    Registrar Venda
+                </a></div>
     </div>
 
     <div class="w3-container">
@@ -20,9 +22,7 @@
  </div>
 
               
-				<a class="btn btn-success btn-sm btn-block " href="{{ route('venda.create')}}">
-                    Registrar Venda
-                </a>
+             
                 <a href ="{{ route('home.index')}}"  class="btn btn-primary  btn-sm btn-block">
                     Voltar ao inicio
                 </a>

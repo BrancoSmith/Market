@@ -19,7 +19,7 @@ class Cliente extends Model
     public function vendedor(){
         return $this->hasOne('App\Vendedor', 'id', 'vendedor_id');
     }
-    public function venda(){
-        return $this->hasOne('App\Venda', 'id', 'venda_id');
+    public function vendas(){
+        return $this->hasOne('App\Venda', 'cliente_id', 'id');
     }
 }

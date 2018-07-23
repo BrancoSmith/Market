@@ -3,7 +3,7 @@
 
 
 <div class="panel panel-success">
-     <div class='panel-heading '><h1>Vendas Nº{{$venda->id}}</h1></div>
+     <div class='panel-heading '><h1>Venda Nº{{$venda->id}}</h1></div>
 </div>
     
     

@@ -1,0 +1,24 @@
+<?php
+
+namespace CodeExperts\Aritmetico;
+
+use PHPUnit\Framework\TestCase;
+
+
+    Class SomaTest extends TestCase {
+        
+        
+        public function testSomaDoisNumeros(){
+
+            $soma = new Soma();
+            $soma->setNum1(10);
+            $soma->setNum2(20);
+
+            $this->assertEquals(30, $soma->somar());
+        }
+
+    }
+
+
+
+?>

@@ -13,7 +13,7 @@ class CreateCarroClienteVendedor extends Migration
      */
     public function up()
     {
-        Schema::create('venda', function (Blueprint $table) {
+        Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
                   
             $table->integer('carro_id')->unsigned()->index();

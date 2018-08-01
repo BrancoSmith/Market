@@ -40,8 +40,9 @@ class CarroController extends Controller
         
         $this->validate($request, [
             'nome' => 'required|unique:carros|max:255',
-            'ano' => 'required',
-            'preco' => 'required',
+            'ano' => 'required|numeric',
+            'preco' => 'required|numeric',
+            'kmrodado' => 'required|numeric',
         ]);
    
 

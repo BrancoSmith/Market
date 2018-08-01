@@ -38,7 +38,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'nome' => 'required|max:100|min:2',
+        'nome' => 'required|max:100|min:2|regex:/^[a-zA-Z ]+$/',
         'cpf' => 'required|unique:clientes|max:11|min:11',
         'telefone' =>'required',
 

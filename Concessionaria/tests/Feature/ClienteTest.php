@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Cliente;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -38,6 +39,16 @@ class  ClienteTest extends TestCase
             ->notSeeInDataBase('clientes', ['nome' => 'h']);
     }
 
+    public function testNomeNaoNumeros()
+    {
+        $this->visit('cliente/create')
+            ->type('1232', 'nome')
+            ->type('12548785698', 'cpf')
+            ->type('156', 'telefone')
+            ->press('Cadastrar')
+            ->notSeeInDatabase('clientes', ['nome' => '1232']);
+    }
+
     public function testCpfClienteComMenosDeOnzeCaracteres()
     {
         $this->visit('cliente/create')
@@ -60,13 +71,30 @@ class  ClienteTest extends TestCase
     public function testCpfClienteRepetido(){
         $this->visit('cliente/create')
             ->type('marcio', 'nome')
-            ->type('985632569819', 'cpf')
+            ->type('12589789545', 'cpf')
             ->type('12333', 'telefone')
-            ->press('Cadastrar')
-            ->assertEquals([], ['cpf' => '985632569819']);
+            ->press('Cadastrar');
+            //dd(Cliente::all()->pluck('cpf'));
+        $this->visit('cliente/create')
+            ->type('marcircl', 'nome')
+            ->type('12589789545', 'cpf')
+            ->type('12333', 'telefone')
+            ->press('Cadastrar');
+            
+            $this->assertEquals(1, Cliente::all()->where('cpf', '12589789545')->count());
     }
 
+    public function testCpfClienteNull()
+    {
+        $this->visit('cliente/create')
+            ->type('marcl', 'nome')
+            ->type(null, 'cpf')
+            ->type('01254', 'telefone')
+            ->press('Cadastrar')
+            ->notSeeInDataBase('clientes', ['cpf' => null]);
+    }
 
+   
     public function testTelefoneNull()
     {
         $this->visit('cliente/create')
@@ -76,9 +104,5 @@ class  ClienteTest extends TestCase
             ->press('Cadastrar')
             ->notSeeInDataBase('clientes', ['telefone' => null]);
     }
-
-
-
- 
-
 }
+?>

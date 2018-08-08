@@ -1,3 +1,4 @@
+import { CursosComponent } from './cursos/cursos.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,3 +20,4 @@ import { CursosModule } from './cursos/cursos.module';
   bootstrap: [AppComponent]
 })     
 export class AppModule { }
+  

@@ -8,6 +8,6 @@ export class CursosService {
   constructor() { }
 
   getCursos(){
-    return ['Java', ' Ext Js', 'Angular']
+    return ['Java','PHP','C++'];
   }
 }

@@ -1,8 +1,8 @@
-import { CursosService } from './cursos.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { CursosComponent } from './cursos.component';
-import { CursosDelatalheComponent } from './cursos-delatalhe/cursos-delatalhe.component';
+import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 @NgModule({
   imports: [
@@ -10,13 +10,10 @@ import { CursosDelatalheComponent } from './cursos-delatalhe/cursos-delatalhe.co
   ],
   declarations: [
     CursosComponent,
-    CursosDelatalheComponent
+    CursoDetalheComponent
   ],
   exports: [
     CursosComponent
-  ],
-  providers: [ 
-    CursosService
   ]
 })
 export class CursosModule { }

@@ -1,0 +1,44 @@
+<section class="property-binding">
+
+ <!-- <article>
+    <h3>
+Interpolation/Intepolção
+    </h3>
+    <p>
+      String com Interpolation: {{ url }}
+    </p>
+    <p>
+      Resultado de 1 + 1 é {{1+1}}
+    </p>
+    <p>
+      Resultado de 1+1 não é {{1+1+ getValor()}}
+    </p>
+    <P>
+      Curso de Angular e gosto do curso: {{cursoAngular && getCurtirCurso()}}
+    </P>
+  </article>
+  
+  <article>
+    <h3><img [src]="urlImage"/></h3>
+  </article>-->
+
+
+  <article>
+    <h3>Class e Style Bindingp</h3>
+    Selecione a Classe: 
+    <select #classe (change)="0">
+      <option value="alert-sucess">Sucesso</option>
+      <option value="alert-info">Info</option>
+      <option value="alert-warning">Alerta</option>
+      <option value="alert-danger">Erro</option>
+    </select>
+    <br><br>
+
+    <div class="alert" role="alert"
+      [class.alert-sucess] = "classe.value == 'alert-sucess'">
+      Sucesso</div>
+    <div class="alert" role="alert">Info</div>
+    <div class="alert" role="alert">Alerta</div>
+    <div class="alert" role="alert">Erro</div>
+  </article>
+</section>
